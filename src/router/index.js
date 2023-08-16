@@ -4,6 +4,10 @@ import Login from '../components/Login.vue'
 import Forgot from '../components/Forgot.vue'
 import Home from '../views/Home.vue'
 import Product from '../views/Product.vue'
+import SingleProduct from '../views/SingleProduct.vue'
+import Cart from '../views/Cart.vue'
+import Checkout from '../views/Checkout.vue'
+import Contact from '../views/Contact.vue'
 const routes = [
     {
         path: '/register',
@@ -24,6 +28,26 @@ const routes = [
         path: '/product',
         name: 'Product',
         component: Product
+    },
+    {
+        path: '/singleproduct',
+        name: 'SingleProduct',
+        component: SingleProduct
+    },
+    {
+        path: '/cart',
+        name: 'Cart',
+        component: Cart
+    },
+    {
+        path: '/checkout',
+        name: 'Checkout',
+        component: Checkout
+    },
+    {
+        path: '/contact',
+        name: 'Contact',
+        component: Contact
     },
     {
         path: '/reset',

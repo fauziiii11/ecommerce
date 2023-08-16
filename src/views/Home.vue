@@ -17,12 +17,12 @@ Welcome to our store. Whatever shopping you want, Happy shopping and Thank you.<
 <div class="grid grid-cols-3 gap-4 m-7">
   <div><div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
   <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="object-cover" src="../assets/image/baju.jpg" alt="product image" style="width: 100%;" />
+    <img class="object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe904982-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=501&width=501&canvas=501:501" alt="product image" style="width: 100%;" />
     <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
   </a>
   <div class="mt-4 px-5 pb-5">
     <a href="#">
-      <h5 class="text-xl tracking-tight text-slate-900">Brown T-Shirt</h5>
+      <h5 class="text-xl tracking-tight text-slate-900">SPECS SOCKS-W-WHITE</h5>
     </a>
     <div class="mt-2 mb-5 flex items-center justify-between">
       <p>
@@ -60,16 +60,16 @@ Welcome to our store. Whatever shopping you want, Happy shopping and Thank you.<
   
   <div><div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
   <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="object-cover" src="../assets/image/balen.jpg" style="width: 100%;" alt="product image"  />
+    <img class="object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe200781-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=501&width=501&canvas=501:501" style="width: 100%;" alt="product image"  />
     <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
   </a>
   <div class="mt-4 px-5 pb-5">
     <a href="#">
-      <h5 class="text-xl tracking-tight text-slate-900">Balenciaga KW 100</h5>
+      <h5 class="text-xl tracking-tight text-slate-900">SPECS SONIC-BLACK/HEMP</h5>
     </a>
     <div class="mt-2 mb-5 flex items-center justify-between">
       <p>
-        <span class="text-3xl font-bold text-slate-900">$1</span>
+        <span class="text-3xl font-bold text-slate-900">$100</span>
         <span class="text-sm text-slate-900 line-through">$699</span>
       </p>
       <div class="flex items-center">
@@ -102,16 +102,16 @@ Welcome to our store. Whatever shopping you want, Happy shopping and Thank you.<
 </div>
   <div><div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
   <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="object-cover" src="src/assets/image/jamet2.jpg" alt="product image" />
+    <img class="object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe110200035-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=501&width=501&canvas=501:501" style="width: 100%;" alt="product image" />
     <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
   </a>
   <div class="mt-4 px-5 pb-5">
     <a href="#">
-      <h5 class="text-xl tracking-tight text-slate-900">Baju SUPER DUPER KERENZZZZ</h5>
+      <h5 class="text-xl tracking-tight text-slate-900">SPECS REACTO BLITZ 2 </h5>
     </a>
     <div class="mt-2 mb-5 flex items-center justify-between">
       <p>
-        <span class="text-3xl font-bold text-slate-900">$9999</span>
+        <span class="text-3xl font-bold text-slate-900">$99</span>
         <span class="text-sm text-slate-900 line-through">$699</span>
       </p>
       <div class="flex items-center">
