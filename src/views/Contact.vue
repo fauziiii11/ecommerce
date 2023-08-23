@@ -1,4 +1,5 @@
 <template>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,600&display=swap" rel="stylesheet" />
     <div class="font-sans text-base text-gray-900 sm:px-10">
   <div class="text-base text-gray-900">
     <div class="mx-auto w-full sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl">

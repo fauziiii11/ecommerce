@@ -1,5 +1,5 @@
 <template>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,600&display=swap" rel="stylesheet" />
     <div class="bg-whitea relative mx-auto mt-50 mb-30 max-w-screen-lg overflow-hidden rounded-t-lg py-32 text-center shadow-lg">
   <p class="text-white">Published December 11, 1455</p>
   <h1 class="mt-2 text-5xl font-bold text-white">FAUZI STORE</h1>
@@ -48,12 +48,14 @@ Welcome to our store. Whatever shopping you want, Happy shopping and Thank you.<
         <span class="mr-2 ml-3 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">5.0</span>
       </div>
     </div>
+    <router-link to="/singleproduct">
     <a href="#" class="flex items-center justify-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300">
       <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
         <path stroke-linecap="round" stroke-linejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
       </svg>
       Add to cart</a
     >
+  </router-link>
   </div>
 </div>
 </div>

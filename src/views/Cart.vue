@@ -1,4 +1,6 @@
 <template>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;1,600&display=swap" rel="stylesheet" />
+
     <section class="h-screen bg-gray-100 py-12 sm:py-16 lg:py-20">
   <div class="mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex items-center justify-center">

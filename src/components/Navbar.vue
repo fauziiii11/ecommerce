@@ -23,8 +23,16 @@
     </RouterLink>
     <RouterLink to="/contact">
         <li class="lg:mr-12"><a class="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">Contact</a></li>
-      </RouterLink>
-      <li class="lg:mr-12"><a class="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#"></a></li>
+    </RouterLink>
+    <RouterLink to="/brands">
+      <li class="lg:mr-12"><a class="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">All-Brands</a></li>
+    </RouterLink>
+    <RouterLink to="/category">
+      <li class="lg:mr-12"><a class="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">All-Category</a></li>
+    </RouterLink>
+    <RouterLink to="/profile">
+      <li class="lg:mr-12"><a class="rounded text-gray-700 transition focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2" href="#">Profile</a></li>
+    </RouterLink>
     </ul>
     <hr class="mt-4 w-full lg:hidden" />
     <div class="my-4 flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0" v-if="isAuthenticated">
@@ -38,6 +46,7 @@
     </div>
     <div class="my-4 flex items-center space-x-6 space-y-2 lg:my-0 lg:ml-auto lg:space-x-8 lg:space-y-0" v-else>
       <a href="#" title="" class="whitespace-nowrap rounded font-medium transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2 hover:text-opacity-50"><router-link to="/login"><font color= "blue">Log In</font></router-link></a>
+      <span>|</span>
       <a href="#" title="" class="whitespace-nowrap rounded font-medium transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-blue-700 focus:ring-offset-2 hover:text-opacity-50"><router-link to="/register"><font color= "gray">Register</font></router-link></a>
     </div>
   </nav>

@@ -8,6 +8,9 @@ import SingleProduct from '../views/SingleProduct.vue'
 import Cart from '../views/Cart.vue'
 import Checkout from '../views/Checkout.vue'
 import Contact from '../views/Contact.vue'
+import Allbrands from '../views/Allbrands.vue'
+import Category from '../views/Category.vue'
+import Profile from '../views/Profile.vue'
 const routes = [
     {
         path: '/register',
@@ -30,9 +33,16 @@ const routes = [
         component: Product
     },
     {
-        path: '/singleproduct',
+        path: '/profile',
+        name: 'Profile',
+        beforeEnter: cekToken,
+        component: Profile
+    },
+    {
+        path: '/product/:slug',
         name: 'SingleProduct',
-        component: SingleProduct
+        component: SingleProduct,
+        props: true
     },
     {
         path: '/cart',
@@ -40,9 +50,21 @@ const routes = [
         component: Cart
     },
     {
+        path: '/category',
+        name: 'Category',
+        component: Category,
+        
+    },
+    {
         path: '/checkout',
         name: 'Checkout',
         component: Checkout
+    },
+    {
+        path: '/brands',
+        name: 'Allbrands',
+        component: Allbrands,
+        
     },
     {
         path: '/contact',
@@ -60,5 +82,16 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
 });
+
+function cekToken(to, from, next) {
+    var isAuthenticated = false;
+    if (localStorage.getItem("token")) isAuthenticated = true;
+    else isAuthenticated = false;
+    if (isAuthenticated) {
+        next();
+    } else {
+        next("/login")
+    }
+}
 
 export default router;
