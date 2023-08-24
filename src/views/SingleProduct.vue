@@ -51,34 +51,41 @@
           <p class="ml-2 text-sm font-medium text-gray-500">1,209 Reviews</p>
         </div>
 
-        <h2 class="mt-8 text-base text-gray-900">Size</h2>
+        <h2 class="mt-8 text-base text-gray-900">Brand</h2>
         <div class="mt-3 flex select-none flex-wrap items-center gap-1">
           <label class="">
             <input type="radio" name="type" value="Powder" class="peer sr-only" checked />
-            <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">40</p>
+            <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">{{ getProductId.name }}</p>
           </label>
-          <label class="">
-            <input type="radio" name="type" value="Whole Bean" class="peer sr-only" />
-            <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">42</p>
-          </label>
-          <label class="">
-            <input type="radio" name="type" value="Groud" class="peer sr-only" />
-            <p class="peer-checked:bg-black peer-checked:text-white rounded-lg border border-black px-6 py-2 font-bold">43</p>
-          </label>
+          
         </div>
 
         <div class="mt-10 flex flex-col items-center justify-between space-y-4 border-t border-b py-4 sm:flex-row sm:space-y-0">
           <div class="flex items-end">
             <h1 class="text-3xl font-bold">Rp. {{ getProductId.base_price }}</h1>
           </div>
-          <router-link to="/cart">
-          <button type="button" class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
+          <div v-if="token">
+            <router-link to="/cart">
+          <button type="button"
+           class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
             <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg>
             Add to cart
           </button>
         </router-link>
+        </div>
+        <div v-else>
+          <router-link to="/login">
+          <button type="button"
+           class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
+            <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            Add to cart
+          </button>
+        </router-link>
+        </div>
         </div>
 
         <ul class="mt-8 space-y-2">
@@ -97,20 +104,57 @@
           </li>
         </ul>
       </div>
+
+      <div class="lg:col-span-3">
+        <div class="border-b border-gray-300">
+          <nav class="flex gap-4">
+            <a href="#" title="" class="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> Description </a>
+
+            <a href="#" title="" class="inline-flex items-center border-b-2 border-transparent py-4 text-sm font-medium text-gray-600">
+              Reviews
+              <span class="ml-2 block rounded-full bg-gray-500 px-2 py-px text-xs font-bold text-gray-100"> 1,209 </span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="mt-8 flow-root sm:mt-12">
+          <h1 class="text-3xl font-bold">Delivered To Your Door</h1>
+          <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusantium nesciunt fuga.</p>
+          <h1 class="mt-8 text-3xl font-bold">From the Fine Farms of Brazil</h1>
+          <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio numquam enim facere.</p>
+          <p class="mt-4">Amet consectetur adipisicing elit. Optio numquam enim facere. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore rerum nostrum eius facere, ad neque.</p>
+        </div>
+      </div>
     </div>
-  <br>
-  <br>
-  <br>
+  
+ 
+
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapActions, mapState } from 'vuex';
+
 export default {
-    props: ['slug'],
-    computed: {
-        ...mapState('product', ['getProductId']),
-    },
-    mounted() {
-        return this.$store.dispatch('product/fetchProductid', this.slug)
+  data() {
+    return {
+      token: null
     }
+  },
+  props: ['slug'],
+  computed: {
+      ...mapState('product', ['getProductId']),
+  },
+  mounted() {
+      const cektoken = localStorage.getItem('token');
+      this.token = cektoken;
+
+      return this.$store.dispatch('product/fetchProductid', this.slug)
+  },
+  methods: {
+    ...mapActions("cart", ["fetchCart"])
+  },
+  beforeMount() {
+    this.fetchCart()
+  },
+ 
 };
 </script>
