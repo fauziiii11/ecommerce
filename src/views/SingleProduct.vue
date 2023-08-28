@@ -7,20 +7,20 @@
         <div class="lg:flex lg:items-start">
           <div class="lg:order-2 lg:ml-5">
             <div class="max-w-xl overflow-hidden rounded-lg">
-              <img class="h-full w-full max-w-full object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe200779-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=330&width=330&canvas=330:330" alt="" />
+              <img class="h-full w-full max-w-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTR0YGzDTlIV4_wTS0ZDFHj3FDaWwMOtyuwYZK6Pdvr3dNy41h4GHSbDLnkmyuIZf3IvY&usqp=CAU" alt="" />
             </div>
           </div>
 
           <div class="mt-2 w-full lg:order-1 lg:w-32 lg:flex-shrink-0">
             <div class="flex flex-row items-start lg:flex-col">
               <button type="button" class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-gray-900 text-center">
-                <img class="h-full w-full object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe200779-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=330&width=330&canvas=330:330" alt="" />
+                <img class="h-full w-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTR0YGzDTlIV4_wTS0ZDFHj3FDaWwMOtyuwYZK6Pdvr3dNy41h4GHSbDLnkmyuIZf3IvY&usqp=CAU" alt="" />
               </button>
               <button type="button" class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center">
-                <img class="h-full w-full object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe200779-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=330&width=330&canvas=330:330" alt="" />
+                <img class="h-full w-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTR0YGzDTlIV4_wTS0ZDFHj3FDaWwMOtyuwYZK6Pdvr3dNy41h4GHSbDLnkmyuIZf3IvY&usqp=CAU" alt="" />
               </button>
               <button type="button" class="flex-0 aspect-square mb-3 h-20 overflow-hidden rounded-lg border-2 border-transparent text-center">
-                <img class="h-full w-full object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe200779-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=330&width=330&canvas=330:330" alt="" />
+                <img class="h-full w-full object-cover" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTR0YGzDTlIV4_wTS0ZDFHj3FDaWwMOtyuwYZK6Pdvr3dNy41h4GHSbDLnkmyuIZf3IvY&usqp=CAU" alt="" />
               </button>
             </div>
           </div>
@@ -50,7 +50,23 @@
           </div>
           <p class="ml-2 text-sm font-medium text-gray-500">1,209 Reviews</p>
         </div>
-
+        <h2 class="font-bold text-black truncate mt-2">Stock : {{ getProductId.stock }}</h2>
+        <div class="class= grid md:grid-cols-3 mb-3 mt-3">
+                            <div class="flex items-center border-gray-100">
+                                <!-- Counter Item -->
+                                <span @click="kurang"
+                                    class="cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-black hover:text-yellow-50">
+                                    - </span>
+                                <span class="mr-2 ml-2">
+                                    {{ cek }}
+                                </span>
+                                <span @click="tambah"
+                                    class="cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-black hover:text-yellow-50">
+                                    + </span>
+                                    
+                            </div>
+                            </div>
+                            
         <h2 class="mt-8 text-base text-gray-900">Brand</h2>
         <div class="mt-3 flex select-none flex-wrap items-center gap-1">
           <label class="">
@@ -65,8 +81,8 @@
             <h1 class="text-3xl font-bold">Rp. {{ getProductId.base_price }}</h1>
           </div>
           <div v-if="token">
-            <router-link to="/cart">
-          <button type="button"
+            <router-link to="/product">
+          <button type="button"  @click="addToCart(getProductId.id)"
            class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-gray-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800">
             <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
@@ -110,19 +126,14 @@
           <nav class="flex gap-4">
             <a href="#" title="" class="border-b-2 border-gray-900 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> Description </a>
 
-            <a href="#" title="" class="inline-flex items-center border-b-2 border-transparent py-4 text-sm font-medium text-gray-600">
-              Reviews
-              <span class="ml-2 block rounded-full bg-gray-500 px-2 py-px text-xs font-bold text-gray-100"> 1,209 </span>
-            </a>
+            
           </nav>
         </div>
 
         <div class="mt-8 flow-root sm:mt-12">
           <h1 class="text-3xl font-bold">Delivered To Your Door</h1>
-          <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia accusantium nesciunt fuga.</p>
-          <h1 class="mt-8 text-3xl font-bold">From the Fine Farms of Brazil</h1>
-          <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio numquam enim facere.</p>
-          <p class="mt-4">Amet consectetur adipisicing elit. Optio numquam enim facere. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore rerum nostrum eius facere, ad neque.</p>
+          <p class="mt-3">{{ getProductId.metaTitle }}</p>
+          
         </div>
       </div>
     </div>
@@ -136,7 +147,8 @@ import { mapActions, mapState } from 'vuex';
 export default {
   data() {
     return {
-      token: null
+      token: null,
+      cek: 1
     }
   },
   props: ['slug'],
@@ -150,7 +162,26 @@ export default {
       return this.$store.dispatch('product/fetchProductid', this.slug)
   },
   methods: {
-    ...mapActions("cart", ["fetchCart"])
+    ...mapActions("cart", ["fetchCart"]),
+    ...mapActions('product', ['addToCart']),
+
+    async addToCart(productId) {
+      try {
+        await this.$store.dispatch('product/addToCart', productId);
+        this.fetchCart();
+      } catch (error) {
+        console.error(error);
+      }
+    },
+        tambah() {
+            this.cek++
+        },
+        kurang() {
+            if (this.cek > 1) {
+                this.cek--
+            }
+
+        }
   },
   beforeMount() {
     this.fetchCart()

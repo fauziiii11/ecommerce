@@ -11,6 +11,7 @@ import Contact from '../views/Contact.vue'
 import Allbrands from '../views/Allbrands.vue'
 import Category from '../views/Category.vue'
 import Profile from '../views/Profile.vue'
+import Order from '../views/Order.vue'
 const routes = [
     {
         path: '/register',
@@ -50,6 +51,12 @@ const routes = [
         component: Cart
     },
     {
+        path: '/order/:orderCode',
+        name: 'Order',
+        component: Order,
+        props: true,
+    },
+    {
         path: '/category',
         name: 'Category',
         component: Category,
@@ -58,7 +65,8 @@ const routes = [
     {
         path: '/checkout',
         name: 'Checkout',
-        component: Checkout
+        component: () => import("../views/Checkout.vue"),
+        meta: { requiresLogin: true},
     },
     {
         path: '/brands',

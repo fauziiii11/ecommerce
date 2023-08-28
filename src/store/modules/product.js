@@ -4,7 +4,8 @@ const product = {
     namespaced: true,
     state: {
         dataProduct: [],
-        getProductId :[]
+        getProductId :[],
+        cart:[]
     },
     getters: {
         getAllProduct: (state) => state.dataProduct,
@@ -30,6 +31,26 @@ const product = {
                 console.log(error);
             }
         },
+        async addToCart({ commit }, productId) {
+            try {
+              const response = await axios.post(
+                "https://ecommerce.olipiskandar.com/api/v1/carts/add",
+                {
+                    "variation_id": productId,
+                    "qty":  1,
+                    "temp_user_id": null,
+                }, {
+                headers: {
+                    'Authorization': `Bearer ${localStorage.getItem("token")}`
+                }
+                });
+                commit("ADD_TO_CART", response.data)
+                console.log(response.data)
+            } catch (error) {
+              console.error(error);
+
+            }
+          },
     },
     mutations: {
         SET_PRODUCT(state, product) {
@@ -37,6 +58,9 @@ const product = {
         },
         SET_PRODUCT_ID(state, product) {
             state.getProductId = product;
+        },
+        ADD_TO_CART(state, cart) {
+            state.cart = cart
         },
     },
 };

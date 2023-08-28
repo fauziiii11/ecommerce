@@ -6,10 +6,12 @@ const auth = {
   state: {
     token: localStorage.getItem("token") || "",
     loginError: null,
+    dataAddress: []
     
   },
   getters: {
     isAuthenticated: (state) => !!state.token, 
+    getAddress:(state) => state.dataAddress
     
   },
   actions: {
@@ -55,6 +57,24 @@ const auth = {
           return false;
       }
     },
+    async getUserAddress({state, commit}) {
+      try {
+        const response = await axios.get(
+          "https://ecommerce.olipiskandar.com/api/v1/user/addresses",
+          {
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem('token')}`,
+            },
+          }
+        );
+        commit('SET_ADDRESS', response.data)
+        return response.data;
+      }catch (error) {
+        console.error(error);
+        return null;
+      }
+    },
+    
     logout({ commit }) {
       // Remove token from localStorage
       const token = localStorage.getItem("token");
@@ -72,6 +92,9 @@ const auth = {
    
   SET_LOGIN_ERROR(state, error) {
     state.loginError = error;
+  },
+  SET_ADDRESS(state, address) {
+    state.dataAddress = address;
   },
   },
 };

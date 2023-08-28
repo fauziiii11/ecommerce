@@ -17,7 +17,7 @@ Welcome to our store. Whatever shopping you want, Happy shopping and Thank you.<
 <div class="grid grid-cols-3 gap-4 m-7">
   <div><div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
   <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe904982-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=501&width=501&canvas=501:501" alt="product image" style="width: 100%;" />
+    <img class="object-cover" src="https://images.vans.com/is/image/Vans/VN000CQR_CYM_HERO?wid=1600&hei=1984&fmt=jpeg&qlt=90&resMode=sharp2&op_usm=0.9,1.7,8,0" alt="product image" style="width: 100%;" />
     <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
   </a>
   <div class="mt-4 px-5 pb-5">
@@ -62,7 +62,7 @@ Welcome to our store. Whatever shopping you want, Happy shopping and Thank you.<
   
   <div><div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
   <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe200781-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=501&width=501&canvas=501:501" style="width: 100%;" alt="product image"  />
+    <img class="object-cover" src="https://images.vans.com/is/image/Vans/VN0A3WMA_VNE_HERO?wid=1600&hei=1984&fmt=jpeg&qlt=90&resMode=sharp2&op_usm=0.9,1.7,8,0" style="width: 100%;" alt="product image"  />
     <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
   </a>
   <div class="mt-4 px-5 pb-5">
@@ -104,7 +104,7 @@ Welcome to our store. Whatever shopping you want, Happy shopping and Thank you.<
 </div>
   <div><div class="relative m-10 flex w-full max-w-xs flex-col overflow-hidden rounded-lg border border-gray-100 bg-white shadow-md">
   <a class="relative mx-3 mt-3 flex h-60 overflow-hidden rounded-xl" href="#">
-    <img class="object-cover" src="https://www.specs.id/media/catalog/product/s/p/spe110200035-1.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=501&width=501&canvas=501:501" style="width: 100%;" alt="product image" />
+    <img class="object-cover" src="https://images.vans.com/is/image/Vans/VN000EE3_W00_HERO?wid=1600&hei=1984&fmt=jpeg&qlt=90&resMode=sharp2&op_usm=0.9,1.7,8,0" style="width: 100%;" alt="product image" />
     <span class="absolute top-0 left-0 m-2 rounded-full bg-black px-2 text-center text-sm font-medium text-white">39% OFF</span>
   </a>
   <div class="mt-4 px-5 pb-5">

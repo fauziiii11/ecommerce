@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const cart = {
-    namspaced: true,
+    namespaced: true,
     state: {
         cartData: [],
     },
@@ -14,7 +14,31 @@ const cart = {
                 const dataCart = await axios.post(
                     "https://ecommerce.olipiskandar.com/api/v1/carts",
                     {
+                        temp_user_id: null
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem("token")}`,
+                        },
+                    },
+                );
+                console.log(dataCart.data.cart_items.data);
+                commit("SET_CART", dataCart.data.cart_items.data);
+            } catch (error) {
+                alert (error);
+                console.log(error);
+            }
+        },
+
+        //change cart
+        async changeQuantityCart({ commit, dispatch }, {cartId, typeQty}) {
+            try {
+                const response = await axios.post(
+                    `https://ecommerce.olipiskandar.com/api/v1/carts/change-quantity`,
+                    {
+                        cart_id: cartId,
                         temp_user_id: null,
+                        type: typeQty,
                     },
                     {
                         headers: {
@@ -22,19 +46,74 @@ const cart = {
                         },
                     }
                 );
-                console.log(dataCart.data["cart_items"]);
-                commit("SET_CART", dataCart.data["cart_items"]);
+                console.log(response.data.message);
+                dispatch("fetchCart");
             } catch (error) {
-                alert(error);
+                alert("Error");
                 console.log(error);
             }
         },
+
+        //checkout
+        async checkoutCart({ commit, dispatch },
+             { shippingAddress, billingAddress, paymentType, deliveryType, cart_item_ids}
+             ) {
+            try {
+                const response = await axios.post(
+                    `https://ecommerce.olipiskandar.com/api/v1/checkout/order/store`,
+                    {
+                        shipping_address_id: shippingAddress,
+                        billing_address_id: billingAddress,
+                        payment_type: paymentType,
+                        delivery_type: deliveryType,
+                        cart_item_ids: cart_item_ids,
+                        transactionId: null,
+                        receipt: null,
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem("token")}`,
+                        },
+                    }
+                );
+                console.log(response.data.message);
+                dispatch("fetchCart");
+            } catch (error) {
+                alert("Error");
+                console.log(error);
+            }
+        },
+
+
+
+        // remove
+        async removeFromCart({ commit, dispatch }, cartId) {
+            try {
+                const response = await axios.post(
+                    `https://ecommerce.olipiskandar.com/api/v1/carts/destroy`,
+                    {
+                        cart_id: cartId,
+                    },
+                    {
+                        headers: {
+                            Authorization: `Bearer ${localStorage.getItem("token")}`,
+                        },
+                    }
+                );
+                console.log(response.data.message);
+                dispatch("fetchCart");
+            } catch (error) {
+                alert("Error removing item from cart");
+                console.log(error);
+            }
+        },
+
     },
     mutations: {
         SET_CART(state, cart) {
-            state.cartData = cart;
+            state.cartData = cart
         },
-    },
-};
+    }
+}
 
 export default cart;
